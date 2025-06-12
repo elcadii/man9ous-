@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+  overflow-x: hidden;
+}
+
+
+
+/* Main Layout */
+.main-layout {
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+/* Content Area */
+.content {
+  flex: 1;
+  padding: 0;
+  background-color: #1a2a1a;
+}
+
+/* Form Header */
+.form-header {
+  width: 70%;
+  background-color: #2a3a2a;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.form-title {
+  margin-left: 35%;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+/* Form Content */
+.form-content {
+  background-color: #212e1f;
+  width: 70%;
+  margin: auto;
+  padding: 30px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  background-color: #2e402b;
+  border: 1px solid #3a4a3a;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4fd12b;
+}
+
+.form-control::placeholder {
+  color: #666;
+}
+
+/* Submit Button */
+.submit-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.submit-button {
+  background-color: #4fd12b;
+  color: #1a1a1a;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  max-width: 400px;
+}
+
+.submit-button:hover {
+  background-color: #22c55e;
+}

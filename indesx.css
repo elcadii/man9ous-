@@ -1,0 +1,569 @@
+/* ===== CSS RESET AND BASE STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  background-color: #161e14;
+  overflow-x: hidden;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.highlight {
+  color: #22c55e;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-description {
+  text-align: center;
+  color: #9ca3af;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== HEADER STYLES ===== */
+/* Header */
+header {
+  padding: 0 5% 0;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  height: 12vh;
+  width: 100%;
+  background-color: #212d1e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .log {
+  width: 18%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+header .log h1 {
+  width: 60px;
+  color: #4fd12b;
+}
+
+header nav {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+}
+
+header nav a {
+  color: #ffff;
+  transition: 0.3s ease-in-out;
+}
+
+header nav a:hover {
+  color: #4fd12b;
+}
+
+header .connection {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+header .connection button {
+  border-radius: 8px;
+  padding: 10px 30px;
+  transition: 0.5s ease-in;
+  background: transparent;
+  border: solid 1px #4fd12b;
+  width: 45%;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+header .connection button:hover {
+  background-color: #4fd12b;
+  color: #000000;
+}
+
+/* end of headre */
+
+/* ===== HERO SECTION ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(img/hero\ imwge);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin-top: 80px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #9ca3af;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  background: #22c55e;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-cta:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+/* ==============.section_titel=========== */
+.section_titel {
+  font-weight: 700;
+  font-size: 54px;
+  text-align: center;
+  color: #4fd12b;
+}
+/* ===== MISSION SECTION ===== */
+.mission {
+  padding: 2rem 0;
+  background: #0f1a0f;
+}
+
+.mission-content {
+  display: flex;
+  justify-content: space-evenly;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.mission-text {
+  max-width: 58%;
+}
+
+.mission-description {
+  font-weight: 400;
+  color: #ffffff66;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 53px;
+}
+
+.mission-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.mission-illustration {
+  width: 100%;
+}
+
+.mission-image {
+  max-width: 80%;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* hghgfhfhg */
+
+.mission .container .mission-stats {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 6% 0;
+}
+
+.mission .container .mission-stats .stat-item {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 26vh;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 16px 16px 20px;
+  background-color: #212d1e;
+  border-radius: 8px;
+}
+.mission .container .mission-stats .stat-item i {
+  font-size: 3rem;
+  margin: 0px 10px;
+}
+.mission .container .mission-stats .stat-item h2 {
+  font-weight: 700;
+  font-size: 24px;
+}
+.mission .container .mission-stats .stat-item p {
+  font-family: "Manrope", Helvetica;
+  font-weight: 400;
+  color: #a3bf9e;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 21px;
+}
+
+/* ===== FEATURES SECTION ===== */
+.features {
+  padding: 4rem 0;
+}
+
+.features .features-layout {
+  display: flex;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.features .features-layout .features-grid {
+  display: flex;
+  width: 70%;
+  justify-content: center;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.features .features-layout .features-grid .feature-card {
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  height: 30vh;
+  background-color: #212d1e;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  text-align: center;
+  gap: 15px;
+}
+.features .features-layout .features-grid .feature-card h3 {
+  color: #16a34a;
+}
+
+.features .features-layout .features-illustration {
+  display: flex;
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+}
+.features .features-layout .features-illustration img {
+  width: 75%;
+}
+
+/* ===== REPORTS SECTION ===== */
+.reports {
+  padding: 6rem 0;
+  background: #0f1a0f;
+}
+
+.reports-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.report-card {
+  width: 30%;
+  border: 1px solid rgba(34, 197, 94, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.report-card:hover {
+  border-color: rgba(34, 197, 94, 0.3);
+  transform: translateY(-5px);
+}
+
+.report-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.report-content {
+  padding: 1.5rem;
+}
+
+.report-content h4 {
+  margin-top: -1px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 400;
+  color: #a3bf9e;
+  font-size: 14px;
+  /* letter-spacing: 0; */
+  line-height: 21px;
+}
+
+.report-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.report-location {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.report-status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-pending {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.status-progress {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.status-resolved {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+/* ===== NEWS SECTION ===== */
+.news {
+  padding: 3rem 0;
+  background: #0a0f0a;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.news-card {
+  background: rgba(15, 26, 15, 0.8);
+  border: 1px solid rgba(34, 197, 94, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.news-card:hover {
+  border-color: rgba(34, 197, 94, 0.3);
+  transform: translateY(-5px);
+}
+
+.news-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 1.5rem;
+}
+.news-content h4 {
+  margin-top: -1px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 400;
+  color: #a3bf9e;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.news-date {
+  color: #22c55e;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.news-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0 1rem;
+  color: #ffffff;
+}
+
+.news-content p {
+  margin-top: -1px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 400;
+  color: #a3bf9e;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+/* ===== CAMPAIGNS SECTION ===== */
+.campaigns {
+  padding: 3rem 0;
+  background: #0f1a0f;
+}
+
+.campaigns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.campaign-card {
+  background: rgba(10, 15, 10, 0.8);
+  border: 1px solid rgba(34, 197, 94, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.campaign-card:hover {
+  border-color: rgba(34, 197, 94, 0.3);
+  transform: translateY(-5px);
+}
+
+.campaign-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.campaign-content {
+  padding: 1.5rem;
+}
+
+.campaign-content h4 {
+  margin-top: -1px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 400;
+  color: #a3bf9e;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.campaign-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #ffffff;
+}
+
+.campaign-content p {
+  color: #9ca3af;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.campaign-btn {
+  background: #22c55e;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.campaign-btn:hover {
+  background: #16a34a;
+}
+
+/* ======= propose activite ======== */
+.campaigns .container .Propose_activite {
+  margin: auto;
+  margin-top: 4%;
+  width: 80%;
+  background-color: #212d1e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.campaigns .container .Propose_activite i {
+  font-size: 5rem;
+}
+
+.campaigns .container .Propose_activite p {
+  margin-top: -9px;
+  font-family: "Manrope", Helvetica;
+  width: 53%;
+  font-weight: 400;
+  text-align: center;
+  color: #a3bf9e;
+  font-size: 17px;
+  line-height: 21px;
+}
+
+.campaigns .container .Propose_activite a {
+  padding: 15px 25px;
+  background-color: #16a34a;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}

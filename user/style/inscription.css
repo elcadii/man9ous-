@@ -1,0 +1,140 @@
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        text-transform: capitalize;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        background: #172112;
+        min-height: 100vh;
+        color: white;
+      }
+
+
+      .container {
+        width: 70%;
+        margin: 2rem auto;
+        padding: 0 2rem;
+      }
+
+      .form-header {
+        background: #2e4229;
+        padding: 1.5rem 2rem;
+        border-radius: 8px 8px 0 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .back-arrow {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+
+      .form-title {
+        margin-left: 42%;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+      .form-container {
+        background: #212e1f;
+        padding: 2rem;
+        border-radius: 0 0 8px 8px;
+      }
+
+      .form-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .form-group.full-width {
+        grid-column: 1 / -1;
+      }
+
+      label {
+        font-size: 0.9rem;
+        color: #e0e0e0;
+      }
+
+      input,
+      select {
+        background: #2e402b;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 0.75rem;
+        color: white;
+        font-size: 0.9rem;
+      }
+
+      input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      input:focus,
+      select:focus {
+        outline: none;
+        border-color: #7cb342;
+      }
+
+      select {
+        cursor: pointer;
+      }
+
+      select option {
+        background: #2d5016;
+        color: white;
+      }
+
+      .submit-btn {
+        background: #4fd12b;
+        color: white;
+        border: none;
+        padding: 0.8rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 1.6rem;
+        transition: background 0.3s;
+      }
+
+      .submit-btn:hover {
+        background: #2fc804;
+        color: #172112;
+      }
+
+      .login-link {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .login-link a {
+        text-decoration: none;
+      }
+
+      .login-link a:hover {
+        text-decoration: underline;
+      }
