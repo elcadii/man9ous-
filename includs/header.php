@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../includs//style/header.css" />
+    <link rel="stylesheet" href="../includs/style/header.css" />
   </head>
   <body>
     <header>
@@ -28,8 +28,8 @@
         <button id="sig-n_upBtn">inscrire</button>
       </div>
       <!-- <div class="auth-buttons">
-        <button class="login-btn"><i class="fas fa-user"></i>log out</button>
-        <button class="signup-btn">view profil</button>
+        <button class="login-btn"><i class="fa-solid fa-user" style="color: #ffffff;"></i>mohammad el cadi</button>
+        <button class="signup-btn">signaler un probleme</button>
       </div> -->
     </header>
   </body>
