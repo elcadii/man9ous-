@@ -48,6 +48,7 @@ header .connection {
   justify-content: space-evenly;
 }
 
+/* if note connecte */
 header .connection button {
   border-radius: 8px;
   padding: 10px 30px;
@@ -64,4 +65,36 @@ header .connection button {
 header .connection button:hover {
   background-color: #4fd12b;
   color: #000000;
+}
+
+
+/* if connecte */
+
+header .auth-buttons {
+  border: 1px solid #54d12b;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+header .auth-buttons .login-btn {
+  background: none;
+  border: none;
+  color: #ffff;
+  cursor: pointer;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+header .auth-buttons .signup-btn {
+  background-color: #54d12b;
+  color: var(--dark-green);
+  border: none;
+  color: #000000;
+  padding: 8px 15px;
+  border-radius: 0px 4px 4px 0px;
+  cursor: pointer;
+  font-weight: bold;
 }

@@ -25,8 +25,12 @@
 
       <div class="connection">
         <button id="loginBtn">Se connecter</button>
-        <button id="sign_upBtn">inscrire</button>
+        <button id="sig-n_upBtn">inscrire</button>
       </div>
+      <!-- <div class="auth-buttons">
+        <button class="login-btn"><i class="fas fa-user"></i>log out</button>
+        <button class="signup-btn">view profil</button>
+      </div> -->
     </header>
   </body>
 </html>

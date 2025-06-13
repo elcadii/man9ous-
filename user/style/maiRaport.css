@@ -1,0 +1,134 @@
+/* Variables */
+:root {
+  --primary-green: #54d12b;
+  --dark-green: #171f14;
+  --medium-green: #2e402b;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+body {
+  background-color: var(--dark-green);
+  color: var(--white);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Main Content */
+main {
+  padding: 30px 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+/* Filter Bar */
+.filter-bar {
+  background-color: rgba(46, 64, 43, 0.7);
+  padding: 12px 20px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white);
+}
+
+.filter select {
+  background-color: transparent;
+  color: var(--white);
+  border: 1px solid var(--primary-green);
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter select option {
+  background-color: var(--medium-green);
+}
+
+/* Reports Grid */
+.reports-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.report-card {
+  background-color: var(--medium-green);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.report-header {
+  padding: 15px;
+}
+
+.report-header h3 {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+}
+
+.report-header h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.report-header p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+.report-status {
+  padding: 0 15px 15px;
+}
+
+.status-btn {
+  background-color: rgba(84, 209, 43, 0.2);
+  color: var(--primary-green);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.report-image {
+  margin-top: auto;
+  height: 30vh;
+}
+
+.report-image img {
+  width: 95%;
+  height: 93%;
+  border-radius: 9px;
+  margin: auto;
+  display: flex;
+}
