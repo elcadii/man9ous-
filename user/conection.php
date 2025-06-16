@@ -1,5 +1,10 @@
+<?php
+// include("../confige/DbConnect.php");
+include("scriptPhP/script_conection.php");
+?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +12,7 @@
     <link rel="stylesheet" href="style/conection.css">
 
 </head>
+
 <body>
     <!-- Main login container -->
     <div class="login-container">
@@ -15,42 +21,44 @@
             <button class="back-arrow" onclick="goBack()" aria-label="Retour">←</button>
             <h1 class="form-title">Connexion</h1>
         </div>
-        
+
         <!-- Form container with login fields -->
         <div class="form-container">
-            <form class="form-grid" onsubmit="handleSubmit(event)">
+            <form class="form-grid"  action="" method="POST" onsubmit="handleSubmit(event)">
                 <!-- Email input group -->
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
                         placeholder="entrez Email"
-                        required
-                        autocomplete="email"
-                    >
+                        autocomplete="email">
+                    <?php if (!empty($errors['email'])): ?>
+                        <p class="text-red-500 text-sm mt-1"><?= $errors['email'] ?></p>
+                    <?php endif; ?>
                 </div>
 
                 <!-- Password input group -->
                 <div class="form-group">
                     <label for="password">mot de passe</label>
-                    <input 
-                        type="password" 
-                        id="password" 
-                        name="password" 
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
                         placeholder="mot de passe"
-                        required
-                        autocomplete="current-password"
-                    >
+                        autocomplete="current-password">
+                    <?php if (!empty($errors['password'])): ?>
+                        <p class="text-red-500 text-sm mt-1"><?= $errors['password'] ?></p>
+                    <?php endif; ?>
                 </div>
-
                 <!-- Submit button -->
-                <button type="submit" class="submit-btn" id="submitBtn">
-                    Connexion   
+                <button type="submit" name="loginbtn" class="submit-btn" id="submitBtn">
+                    Connexion
                 </button>
             </form>
         </div>
     </div>
 </body>
+
 </html>

@@ -1,0 +1,18 @@
+
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+$sdn = "mysql:host=localhost;dbname=man9ousdb";
+$user = "root";
+$pass = "";
+
+try {
+    $pdo = new PDO($sdn, $user, $pass);
+
+// echo "Connected successfully"; 
+
+} catch (PDOException $e) {
+    echo "Connection error: " . $e->getMessage();
+}
+?>

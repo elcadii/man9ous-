@@ -87,6 +87,7 @@
         font-size: 0.9rem;
       }
 
+
       input::placeholder {
         color: rgba(255, 255, 255, 0.5);
       }
@@ -95,6 +96,10 @@
       select:focus {
         outline: none;
         border-color: #7cb342;
+      }
+
+      .form-group p{
+        color: red important;
       }
 
       select {
