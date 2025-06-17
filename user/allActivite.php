@@ -24,7 +24,12 @@ include("scriptPHP/script_allActivite.php");
 
       <div class="campaigns-grid">
         <!-- Campaign Card 1 -->
-        <?php foreach ($activities as $activity): ?>
+        <?php
+        $dateToday = date('Y-m-d');
+        foreach ($activities as $activity):
+          if ($activity['event_date'] < $dateToday) {
+            continue; 
+          } ?>
           <div class="campaign-card">
             <img
               src="<?= htmlspecialchars($activity['activity_photo']) ?: 'img/activite.png' ?>"
