@@ -134,3 +134,9 @@ input:focus {
 .submit-btn:active {
   transform: translateY(0);
 }
+
+.text-red-500 {
+  color: #f44336; /* Rouge */
+  font-size: 14px;
+  margin-top: 4px;
+}
