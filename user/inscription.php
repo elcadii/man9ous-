@@ -151,7 +151,7 @@ include("scriptPhP/script_inscription.php");
       </form>
 
       <div class="login-link">
-        J'ai un compte. <a href="#login">Connectez</a>
+        J'ai un compte. <a href="conection.php">Connectez</a>
       </div>
     </div>
   </div>

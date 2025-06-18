@@ -1,5 +1,5 @@
 <?php
-// include("../confige/DbConnect.php");
+include("../confige/DbConnect.php");
 include("scriptPhP/script_conection.php");
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ include("scriptPhP/script_conection.php");
 
         <!-- Form container with login fields -->
         <div class="form-container">
-            <form class="form-grid"  action="" method="POST" onsubmit="handleSubmit(event)">
+            <form class="form-grid" action="" method="POST" onsubmit="handleSubmit(event)">
                 <!-- Email input group -->
                 <div class="form-group">
                     <label for="email">Email</label>

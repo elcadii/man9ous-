@@ -14,7 +14,7 @@
           <!-- Footer Logo and Description -->
           <div class="footer-section">
             <div class="footer-logo">
-              <span class="logo-text">Man9ous</span>
+              <img src="../img/Man9ous_w.png" alt="">
             </div>
             <p class="footer-description">
               Plateforme citoyenne pour améliorer notre ville ensemble.

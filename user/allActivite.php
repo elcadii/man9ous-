@@ -22,13 +22,20 @@ include("scriptPHP/script_allActivite.php");
     <div class="container">
       <h2 class="section-title"><span class="highlight">Campagnes</span></h2>
 
+      <form method="GET" class="filter-bar" style="margin-bottom: 20px;">
+        <input type="text" id="search" name="search" placeholder="Titre ou description..." value="<?= htmlspecialchars($_GET['search'] ?? '') ?>" />
+        <button type="submit">Rechercher</button>
+      </form>
+
+
+
       <div class="campaigns-grid">
         <!-- Campaign Card 1 -->
         <?php
         $dateToday = date('Y-m-d');
         foreach ($activities as $activity):
           if ($activity['event_date'] < $dateToday) {
-            continue; 
+            continue;
           } ?>
           <div class="campaign-card">
             <img

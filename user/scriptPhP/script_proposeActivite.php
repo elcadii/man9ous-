@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             activity_photo, activity_location_, activity_category,
             commune_id, user_id
         ) VALUES (
-            :title, :description, :event_date, 'pending',
+            :title, :description, :event_date, 'en attente',
             :photo, :location, :category, :commune_id, :user_id
         )";
 

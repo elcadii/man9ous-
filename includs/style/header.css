@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -27,9 +27,8 @@ header .log {
   cursor: pointer;
 }
 
-header .log h1 {
-  width: 60px;
-  color: #4fd12b;
+header .log img {
+  width: 100%;
 }
 
 header nav {
@@ -74,7 +73,6 @@ header .connection button:hover {
   background-color: #4fd12b;
   color: #000000;
 }
-
 
 /* if connecte */
 

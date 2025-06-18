@@ -16,17 +16,33 @@
   width: 25%;
 }
 
-.footer-section h4 {
+
+
+
+
+.footer-section img {
   color: #22c55e;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
+.footer-logo{
+width: 52%;
+}
+
+.footer-logo img{
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 0;
+
+}
+
 .footer-description {
+  margin-top: 20px;
   color: #9ca3af;
   line-height: 1.6;
-  margin-top: 1rem;
 }
 
 .footer-links {

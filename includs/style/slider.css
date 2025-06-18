@@ -23,7 +23,7 @@
   color: white;
 }
 
-.sidebar-item.active {
+.sidebar-item .active {
   background-color: #2e402b;
   color: white;
 }

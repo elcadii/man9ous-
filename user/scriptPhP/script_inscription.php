@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["singup"])) {
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['first_name'] = $user['first_name'];
 
-        // header("Location: ../");
+        header("Location: connection.php");
         exit();
     }
 }

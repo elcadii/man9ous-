@@ -22,18 +22,19 @@ include("scriptPHP/script_MesPropositionDactivite.php");
     <div class="container">
       <h1>Mes Proposition de campagne</h1>
 
-      <div class="filter-bar">
+      <form class="filter-bar" method="GET">
         <div class="filter">
           <i class="fas fa-filter"></i>
           <span>Filtre par statut:</span>
-          <select>
-            <option value="tout">tout</option>
-            <option value="accepter">accepter</option>
-            <option value="pending">pending</option>
-            <option value="refuser">refuser</option>
+          <select name="status" id="status" onchange="this.form.submit()">
+            <option value="all" <?= $statusFilter == 'all' ? 'selected' : '' ?>>Tous</option>
+            <option value="accepter" <?= $statusFilter == 'accepter' ? 'selected' : '' ?>>Accepté</option>
+            <option value="en attente" <?= $statusFilter == 'en attente' ? 'selected' : '' ?>>En attente</option>
+            <option value="refuser" <?= $statusFilter == 'refuser' ? 'selected' : '' ?>>Refusé</option>
           </select>
         </div>
-      </div>
+      </form>
+
 
       <div class="campaigns">
 
@@ -72,7 +73,7 @@ include("scriptPHP/script_MesPropositionDactivite.php");
 
         if (text.includes("accepter")) {
           el.style.color = "#54d12b";
-        } else if (text.includes("pending")) {
+        } else if (text.includes("en attente")) {
           el.style.color = "#ffc107";
         } else if (text.includes("refuser")) {
           el.style.color = "#f44336";
