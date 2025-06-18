@@ -1,9 +1,11 @@
 <?php
 include("../confige/DbConnect.php");
+// var_dump($_SESSION);
+// die();
 
 // Vérifier si c’est un admin connecté);
 if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../login.php");
+    header("Location: ../../../../user/conection.php");
     exit;
 }
 
@@ -87,4 +89,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submitNews"])) {
         }
     }
 }
-?>

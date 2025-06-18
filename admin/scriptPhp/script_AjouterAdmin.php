@@ -1,6 +1,13 @@
 <?php
 include("../confige/DbConnect.php");
 
+
+// Vérifier si c’est un admin connecté);
+if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
+    header("Location: ../login.php");
+    exit;
+}
+
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -61,9 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['login'] = true;
             $_SESSION['admin_id'] = $admin['admin_id'];
             $_SESSION['name'] = $admin['first_name'];
-            var_dump($_SESSION);
-            die();
-
             header("Location: dashboard.php"); 
             exit;
         } else {
