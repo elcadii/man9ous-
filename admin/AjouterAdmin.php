@@ -1,3 +1,6 @@
+<?php
+include("scriptPhp/script_AjouterAdmin.php");
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -30,83 +33,87 @@
       </div>
 
       <!-- Form Content -->
-      <form class="form-content">
+      <form class="form-content" method="POST" action="">
         <div class="form-grid">
           <!-- Left Column -->
           <div>
             <div class="form-group">
-              <label for="firstName" class="form-label">first name</label>
-              <input
-                type="text"
-                id="firstName"
-                class="form-control"
-                placeholder="enter first name" />
+              <label for="firstName" class="form-label">First name</label>
+              <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter first name"
+                value="<?= htmlspecialchars($_POST['firstName'] ?? '') ?>" />
+              <?php if (!empty($errors['firstName'])): ?>
+                <p class="text-red-500 text-sm mt-1"><?= $errors['firstName'] ?></p>
+              <?php endif; ?>
             </div>
 
             <div class="form-group">
               <label for="email" class="form-label">Email</label>
-              <input
-                type="email"
-                id="email"
-                class="form-control"
-                placeholder="entre email" />
+              <input type="email" id="email" name="email" class="form-control" placeholder="Enter email"
+                value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" />
+              <?php if (!empty($errors['email'])): ?>
+                <p class="text-red-500 text-sm mt-1"><?= $errors['email'] ?></p>
+              <?php endif; ?>
             </div>
 
             <div class="form-group">
               <label for="cin" class="form-label">CIN</label>
-              <input
-                type="text"
-                id="cin"
-                class="form-control"
-                placeholder="entre CIN" />
+              <input type="text" id="cin" name="cin" class="form-control" placeholder="Enter CIN"
+                value="<?= htmlspecialchars($_POST['cin'] ?? '') ?>" />
+              <?php if (!empty($errors['cin'])): ?>
+                <p class="text-red-500 text-sm mt-1"><?= $errors['cin'] ?></p>
+              <?php endif; ?>
             </div>
 
             <div class="form-group">
-              <label for="password" class="form-label">mot de passe</label>
-              <input
-                type="password"
-                id="password"
-                class="form-control"
-                placeholder="ajoutez la date" />
+              <label for="password" class="form-label">Mot de passe</label>
+              <input type="password" id="password" name="password" class="form-control" placeholder="Mot de passe" />
+              <?php if (!empty($errors['password'])): ?>
+                <p class="text-red-500 text-sm mt-1"><?= $errors['password'] ?></p>
+              <?php endif; ?>
             </div>
           </div>
 
           <!-- Right Column -->
           <div>
             <div class="form-group">
-              <label for="lastName" class="form-label">last name</label>
-              <input
-                type="text"
-                id="lastName"
-                class="form-control"
-                placeholder="enter last name" />
+              <label for="lastName" class="form-label">Last name</label>
+              <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter last name"
+                value="<?= htmlspecialchars($_POST['lastName'] ?? '') ?>" />
+              <?php if (!empty($errors['lastName'])): ?>
+                <p class="text-red-500 text-sm mt-1"><?= $errors['lastName'] ?></p>
+              <?php endif; ?>
             </div>
 
             <div class="form-group">
               <label for="phone" class="form-label">Numéro de Téléphone</label>
-              <input
-                type="tel"
-                id="phone"
-                class="form-control"
-                placeholder="entre numéro de téléphone" />
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter phone number"
+                value="<?= htmlspecialchars($_POST['phone'] ?? '') ?>" />
+              <?php if (!empty($errors['phone'])): ?>
+                <p class="text-red-500 text-sm mt-1"><?= $errors['phone'] ?></p>
+              <?php endif; ?>
             </div>
 
             <div class="form-group">
-              <label for="municipality" class="form-label">Sélectionnez la municipalité</label>
-              <input
-                type="text"
-                id="municipality"
-                class="form-control"
-                placeholder="Municipalité" />
+              <label for="municipality" class="form-label">Municipalité</label>
+              <select id="municipality" name="municipality" class="form-control">
+                <option value="">-- Sélectionnez la municipalité --</option>
+                <option value="1" <?= (isset($_POST['municipality']) && $_POST['municipality'] == '1') ? 'selected' : '' ?>>Tunis</option>
+                <option value="2" <?= (isset($_POST['municipality']) && $_POST['municipality'] == '2') ? 'selected' : '' ?>>Sfax</option>
+                <option value="3" <?= (isset($_POST['municipality']) && $_POST['municipality'] == '3') ? 'selected' : '' ?>>Sousse</option>
+                <option value="4" <?= (isset($_POST['municipality']) && $_POST['municipality'] == '4') ? 'selected' : '' ?>>Kairouan</option>
+              </select>
+              <?php if (!empty($errors['municipality'])): ?>
+                <p class="text-red-500 text-sm mt-1"><?= $errors['municipality'] ?></p>
+              <?php endif; ?>
             </div>
 
             <div class="form-group">
-              <label for="confirmPassword" class="form-label">confirmé mot de pass</label>
-              <input
-                type="password"
-                id="confirmPassword"
-                class="form-control"
-                placeholder="ajoutez la date" />
+              <label for="confirmPassword" class="form-label">Confirmer mot de passe</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+                placeholder="Confirmer mot de passe" />
+              <?php if (!empty($errors['confirmPassword'])): ?>
+                <p class="text-red-500 text-sm mt-1"><?= $errors['confirmPassword'] ?></p>
+              <?php endif; ?>
             </div>
           </div>
         </div>
@@ -117,6 +124,9 @@
           </button>
         </div>
       </form>
+      >
+
+
     </main>
   </div>
   <?php

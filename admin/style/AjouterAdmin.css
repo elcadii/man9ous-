@@ -122,3 +122,9 @@ body {
 .submit-button:hover {
   background-color: #22c55e;
 }
+
+.text-red-500 {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}

@@ -43,7 +43,7 @@ if (isset($_POST['loginbtn'])) {
             exit();
         } elseif ($adminRow && password_verify($password, $adminRow['password'])) {
             $_SESSION['login'] = true;
-            $_SESSION['user_id'] = $adminRow['user_id'];
+            $_SESSION['admin_id'] = $adminRow['admin_id'];
             $_SESSION['name'] = $adminRow['first_name'];
 
             header("Location: http://localhost/man9ous/man9ous-/user/");
