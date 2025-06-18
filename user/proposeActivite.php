@@ -173,7 +173,6 @@ include("scriptPHP/script_proposeActivite.php");
 
       if (file) {
         const reader = new FileReader();
-
         reader.onload = function(e) {
           preview.src = e.target.result;
           preview.style.display = 'block';
