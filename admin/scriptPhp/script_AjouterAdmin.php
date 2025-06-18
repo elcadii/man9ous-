@@ -28,14 +28,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($_POST['phone'])) {
         $errors['phone'] = 'Numéro de téléphone requis';
     }
-    
-    // Validation pour municipality (select)
     if (empty($_POST['municipality'])) {
         $errors['municipality'] = 'Municipalité requise';
     }
 
-    //  insérer dans la base
+    // Insert only if no errors
     if (empty($errors)) {
+        // Hash password
+        $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+        // Insert admin
         $stmt = $pdo->prepare("INSERT INTO admin (first_name, last_name, email_, password, CNI_number, phone_number, commune_id)
             VALUES (:first_name, :last_name, :email_, :password, :CNI_number, :phone_number, :commune_id)");
 
@@ -43,15 +45,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':first_name' => $_POST['firstName'],
             ':last_name' => $_POST['lastName'],
             ':email_' => $_POST['email'],
-            ':password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+            ':password' => $hashedPassword,
             ':CNI_number' => $_POST['cin'],
             ':phone_number' => $_POST['phone'],
             ':commune_id' => intval($_POST['municipality'])
         ]);
 
-        // Redirection ou message succès
-        header("Location: success.php");
-        exit;
+        // Select admin from DB using email
+        $stmt1 = $pdo->prepare("SELECT * FROM admin WHERE email_ = ?");
+        $stmt1->execute([$_POST['email']]);
+        $admin = $stmt1->fetch(PDO::FETCH_ASSOC);
+
+        // Set session
+        if ($admin) {
+            $_SESSION['login'] = true;
+            $_SESSION['admin_id'] = $admin['admin_id'];
+            $_SESSION['name'] = $admin['first_name'];
+            var_dump($_SESSION);
+            die();
+
+            header("Location: dashboard.php"); 
+            exit;
+        } else {
+            $errors['global'] = "Une erreur s’est produite lors de la connexion.";
+        }
     }
 }
 ?>

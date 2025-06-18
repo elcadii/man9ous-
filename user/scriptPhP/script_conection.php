@@ -38,21 +38,21 @@ if (isset($_POST['loginbtn'])) {
             $_SESSION['login'] = true;
             $_SESSION['user_id'] = $userRow['user_id'];
             $_SESSION['name'] = $userRow['first_name'];
-
-            header("Location: http://localhost/man9ous/man9ous-/user/");
+            $_SESSION['role'] = 'user';
+            header("Location: ../user/");
             exit();
         } elseif ($adminRow && password_verify($password, $adminRow['password'])) {
             $_SESSION['login'] = true;
             $_SESSION['admin_id'] = $adminRow['admin_id'];
             $_SESSION['name'] = $adminRow['first_name'];
-
-            header("Location: http://localhost/man9ous/man9ous-/user/");
+            $_SESSION['role'] = 'admin';
+            header("Location: ../admin/");
             exit();
         } else {
             $errors['password'] = "Wrong password.";
         }
     } else {
-            $errors['email'] = "Email not found.";
-        }
+        $errors['email'] = "Email not found.";
+    }
 }
 // include("includes/header.php");
