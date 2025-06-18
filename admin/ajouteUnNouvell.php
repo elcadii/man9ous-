@@ -1,5 +1,6 @@
 <?php
 include("scriptPhp/script_ajouteUnNouvell.php");
+include("scriptphp/script_listeDeL'étulisateure.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">

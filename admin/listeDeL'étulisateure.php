@@ -1,3 +1,8 @@
+<?php
+include("scriptphp/script_listeDeL'étulisateure.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -40,77 +45,17 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Mohammad</td>
-              <td>El Cadi</td>
-              <td>EE 59554</td>
-              <td>07 39 29 10 88</td>
-              <td>elcadimohammad@gmail.com</td>
-            </tr>
-            <tr>
-              <td>Mohammad</td>
-              <td>El Cadi</td>
-              <td>EE 59554</td>
-              <td>07 39 29 10 88</td>
-              <td>elcadimohammad@gmail.com</td>
-            </tr>
-            <tr>
-              <td> O DIEDmad</td>
-              <td>El Cadi</td>
-              <td>EE 59554</td>
-              <td>07 39 29 10 88</td>
-              <td>elcadimohammad@gmail.com</td>
-            </tr>
-            <tr>
-              <td>Mohammad</td>
-              <td>El Cadi</td>
-              <td>EE 59554</td>
-              <td>07 39 29 10 88</td>
-              <td>elcadimohammad@gmail.com</td>
-            </tr>
-            <tr>
-              <td>Mohammad</td>
-              <td>El Cadi</td>
-              <td>EE 59554</td>
-              <td>07 39 29 10 88</td>
-              <td>elcadimohammad@gmail.com</td>
-            </tr>
-            <tr>
-              <td>Mohammad</td>
-              <td>El Cadi</td>
-              <td>EE 59554</td>
-              <td>07 39 29 10 88</td>
-              <td>elcadimohammad@gmail.com</td>
-            </tr>
-            <tr>
-              <td>Mohammad</td>
-              <td>El Cadi</td>
-              <td>EE 59554</td>
-              <td>07 39 29 10 88</td>
-              <td>elcadimohammad@gmail.com</td>
-            </tr>
-            <tr>
-              <td>Mohammad</td>
-              <td>El Cadi</td>
-              <td>EE 59554</td>
-              <td>07 39 29 10 88</td>
-              <td>elcadimohammad@gmail.com</td>
-            </tr>
-            <tr>
-              <td>Mohammad</td>
-              <td>El Cadi</td>
-              <td>EE 59554</td>
-              <td>07 39 29 10 88</td>
-              <td>elcadimohammad@gmail.com</td>
-            </tr>
-            <tr>
-              <td>Mohammad</td>
-              <td>El Cadi</td>
-              <td>EE 59554</td>
-              <td>07 39 29 10 88</td>
-              <td>elcadimohammad@gmail.com</td>
-            </tr>
+            <?php foreach ($results as $row): ?>
+              <tr>
+                <td><?= htmlspecialchars($row['first_name']) ?></td>
+                <td><?= htmlspecialchars($row['last_name']) ?></td>
+                <td><?= htmlspecialchars($row['CNI_number']) ?></td>
+                <td><?= htmlspecialchars($row['phone_number']) ?></td>
+                <td><?= htmlspecialchars($row['email']) ?></td>
+              </tr>
+            <?php endforeach; ?>
           </tbody>
+
         </table>
       </div>
     </main>

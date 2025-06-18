@@ -1,5 +1,6 @@
 <?php
 include("scriptPHP/script_activiteProposées.php");
+include("scriptphp/script_listeDeL'étulisateure.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
