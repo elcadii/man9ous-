@@ -596,3 +596,19 @@ select option {
 .link-updated {
   animation: linkUpdate 0.3s ease-in-out;
 }
+
+.text-error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border: 1px solid #a2ccae;
+  color: #155724;
+  padding: 12px 16px;
+  margin-top: 20px;
+  border-radius: 6px;
+  font-weight: 500;
+}

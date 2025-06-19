@@ -497,25 +497,7 @@ photoUpload.addEventListener("drop", function (e) {
   }
 });
 
-// Form submission
-document.getElementById("reportForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  // Collect form data
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData);
-
-  // Add location data if available
-  if (currentMarker) {
-    data.latitude = currentMarker.getLatLng().lat;
-    data.longitude = currentMarker.getLatLng().lng;
-  }
-  data.locationLink = locationLinkInput.value;
-
-  // Here you would typically send the data to your server
-  console.log("Form data:", data);
-  alert("Rapport soumis avec succès!");
-});
+;
 
 // Initialize map size
 setTimeout(() => {
