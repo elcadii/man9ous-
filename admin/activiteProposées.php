@@ -33,10 +33,11 @@ include("scriptphp/script_listeDeL'étulisateure.php");
 
       <div class="campaigns-grid">
         <!-- Campaign 1 -->
-        <?php foreach ($activities as $activity): ?>
+        <?php foreach ($activities as $activity):
+          ?>
           <div class="campaign-card">
             <img
-              src="img/activite.png"
+              src="../user/<?= htmlspecialchars($activity['activity_photo']) ?>"
               alt="Image activité"
               class="campaign-image" />
             <div class="campaign-content">

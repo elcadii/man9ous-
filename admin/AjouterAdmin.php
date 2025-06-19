@@ -96,12 +96,13 @@ include("scriptphp/script_listeDeL'étulisateure.php");
 
             <div class="form-group">
               <label for="municipality" class="form-label">Municipalité</label>
-              <select id="municipality" name="municipality" class="form-control">
-                <option value="">-- Sélectionnez la municipalité --</option>
-                <option value="1" <?= (isset($_POST['municipality']) && $_POST['municipality'] == '1') ? 'selected' : '' ?>>Tunis</option>
-                <option value="2" <?= (isset($_POST['municipality']) && $_POST['municipality'] == '2') ? 'selected' : '' ?>>Sfax</option>
-                <option value="3" <?= (isset($_POST['municipality']) && $_POST['municipality'] == '3') ? 'selected' : '' ?>>Sousse</option>
-                <option value="4" <?= (isset($_POST['municipality']) && $_POST['municipality'] == '4') ? 'selected' : '' ?>>Kairouan</option>
+              <select id="municipality" name="commune" class="form-control">
+                <option value="">Municipalité</option>
+                <?php foreach ($communes as $commune): ?>
+                  <option value="<?= htmlspecialchars($commune['commune_id']) ?>">
+                    <?= htmlspecialchars($commune['commune_name']) ?>
+                  </option>
+                <?php endforeach; ?>
               </select>
               <?php if (!empty($errors['municipality'])): ?>
                 <p class="text-red-500 text-sm mt-1"><?= $errors['municipality'] ?></p>

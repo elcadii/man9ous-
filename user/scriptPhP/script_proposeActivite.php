@@ -2,7 +2,13 @@
 session_start();
 include("../confige/DbConnect.php");
 
-$errors = []; // tableau d'erreurs
+// Fetch all communes from the database
+$sql = "SELECT * FROM commune";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$communes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$errors = [];
 $title = $category = $location = $description = $commune_id = $event_date = "";
 $photo_path = "";
 

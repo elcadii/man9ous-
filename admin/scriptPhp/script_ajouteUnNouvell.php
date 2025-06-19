@@ -9,6 +9,12 @@ if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
     exit;
 }
 
+// Fetch all communes from the database
+$sql = "SELECT * FROM commune";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$communes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 $errors = [];
 $title = $_POST['title'] ?? '';
 $municipality = $_POST['municipality'] ?? '';

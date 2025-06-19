@@ -1,5 +1,4 @@
 <?php
-include("../confige/DbConnect.php");
 include("scriptPhP/script_inscription.php");
 ?>
 <!DOCTYPE html>
@@ -85,10 +84,11 @@ include("scriptPhP/script_inscription.php");
             <label for="municipality">Sélectionnez la municipalité</label>
             <select id="municipality" name="commune">
               <option value="">Municipalité</option>
-              <option value="1">Tunis</option>
-              <option value="2">Sfax</option>
-              <option value="3">Sousse</option>
-              <option value="4">Kairouan</option>
+              <?php foreach ($communes as $commune): ?>
+                <option value="<?= htmlspecialchars($commune['commune_id']) ?>">
+                  <?= htmlspecialchars($commune['commune_name']) ?>
+                </option>
+              <?php endforeach; ?>
             </select>
             <?php if (!empty($errors['commune'])): ?>
               <p class="text-red-500 text-sm mt-1"><?= $errors['commune'] ?></p>

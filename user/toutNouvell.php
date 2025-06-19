@@ -2,7 +2,6 @@
 session_start();
 include("../confige/DbConnect.php");
 
-
 $sql = "SELECT * FROM news";
 $stmt = $pdo->query($sql);
 $newsList = $stmt->fetchAll(PDO::FETCH_ASSOC);

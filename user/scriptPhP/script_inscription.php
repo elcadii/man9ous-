@@ -3,6 +3,12 @@
 include("../confige/DbConnect.php");
 // start script for inscription 
 
+// Fetch all communes from the database
+$sql = "SELECT * FROM commune";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$communes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 $errors = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["singup"])) {

@@ -2,6 +2,7 @@
 include("../confige/DbConnect.php");
 
 
+
 // Vérifier si c’est un admin connecté);
 if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
     echo "<div style='padding:20px; background:#ffe0e0; color:#a00; border:1px solid #a00;'>
@@ -10,6 +11,12 @@ if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
           </div>";
     exit;
 }
+
+// Fetch all communes from the database
+$sql = "SELECT * FROM commune";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$communes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $errors = [];
 

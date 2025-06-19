@@ -30,8 +30,8 @@ include("scriptPHP/script_proposeActivite.php");
         </div>
 
         <?php if (!empty($success_message)): ?>
-            <div class="success-msg"><?= $success_message ?></div>
-          <?php endif; ?>
+          <div class="success-msg"><?= $success_message ?></div>
+        <?php endif; ?>
 
         <!-- Form Content -->
         <form class="campaign-form" method="POST" action="" enctype="multipart/form-data">
@@ -116,12 +116,13 @@ include("scriptPHP/script_proposeActivite.php");
 
               <div class="form-group">
                 <label for="municipality">Sélectionnez la municipalité</label>
-                <select class="form-input" id="municipality" name="commune_id">
+                <select class="form-input" id="municipality" name="commune">
                   <option value="">Municipalité</option>
-                  <option value="1">Tunis</option>
-                  <option value="2">Sfax</option>
-                  <option value="3">Sousse</option>
-                  <option value="4">Kairouan</option>
+                  <?php foreach ($communes as $commune): ?>
+                    <option value="<?= htmlspecialchars($commune['commune_id']) ?>">
+                      <?= htmlspecialchars($commune['commune_name']) ?>
+                    </option>
+                  <?php endforeach; ?>
                 </select>
                 <?php if (!empty($errors['commune_id'])): ?>
                   <p class="text-red-500 text-sm mt-1"><?= $errors['commune_id'] ?></p>
