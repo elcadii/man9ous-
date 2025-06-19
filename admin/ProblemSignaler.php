@@ -1,8 +1,8 @@
 <?php
-include("../includs/header.php");
 include("scriptphp/script_listeDeL'étulisateure.php");
 include("scriptphp/script_ProblemSignaler.php");
-
+// var_dump($_SESSION);
+// die();
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +22,9 @@ include("scriptphp/script_ProblemSignaler.php");
 </head>
 
 <body>
+  <?php
+  include("../includs/header.php");
+  ?>
   <!-- Main Layout -->
   <div class="main-layout">
     <!-- Sidebar -->
@@ -34,22 +37,23 @@ include("scriptphp/script_ProblemSignaler.php");
       <!-- Stats Cards -->
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-number">2</div>
-          <div class="stat-label">Campagnes en attente</div>
+          <div class="stat-number"><?= $waiting ?></div>
+          <div class="stat-label">non traité</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">2</div>
-          <div class="stat-label">Résolu</div>
+          <div class="stat-number"><?= $resolved ?></div>
+          <div class="stat-label">traité</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">1</div>
-          <div class="stat-label">En cours de traitement</div>
+          <div class="stat-number"><?= $in_progress ?></div>
+          <div class="stat-label">en cours</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">3</div>
-          <div class="stat-label">total des plaintes</div>
+          <div class="stat-number"><?= $total ?></div>
+          <div class="stat-label">Total des plaintes</div>
         </div>
       </div>
+
 
       <!-- Filter Section -->
       <div class="filter-section">
@@ -57,12 +61,16 @@ include("scriptphp/script_ProblemSignaler.php");
           <span><i class="fa-solid fa-filter"></i></span>
           Filter
         </button>
-        <span>Status</span>
-        <select class="filter-dropdown">
-          <option>text</option>
-          <option>All</option>
-          <option>Resolved</option>
-        </select>
+        <form method="GET" style="display: inline;">
+          <span>Status</span>
+          <select name="status" class="filter-dropdown" onchange="this.form.submit()">
+            <option value="">All</option>
+            <option value="non traité" <?= ($status_filter === 'non traité') ? 'selected' : '' ?>>Non traité</option>
+            <option value="en cours" <?= ($status_filter === 'en cours') ? 'selected' : '' ?>>En cours</option>
+            <option value="traité" <?= ($status_filter === 'traité') ? 'selected' : '' ?>>Traité</option>
+          </select>
+        </form>
+
       </div>
 
       <!-- Table -->
@@ -83,8 +91,8 @@ include("scriptphp/script_ProblemSignaler.php");
 
 
             <?php foreach ($reports as $report): ?>
-            
-            
+
+
               <tr>
                 <form method="POST">
                   <input type="hidden" name="problem_id" value="<?= $report['problem_id'] ?>">
