@@ -20,18 +20,19 @@ include("scriptphp/script_maiRaport.php");
     <div class="container">
       <h1>mais raporst</h1>
 
-      <div class="filter-bar">
-        <div class="filter">
-          <i class="fas fa-filter"></i>
-          <span>Filtre par statut:</span>
-          <select>
-            <option value="tout">tout</option>
-            <option value="en-cours">en cours</option>
-            <option value="complete">complété</option>
-            <option value="nouveau">nouveau</option>
+      <div class="filter">
+        <i class="fas fa-filter"></i>
+        <span>Filtre par statut:</span>
+        <form method="GET">
+          <select name="status" onchange="this.form.submit()">
+            <option value="">Tous</option>
+            <option value="non traité" <?= ($status_filter === 'non traité') ? 'selected' : '' ?>>Non traité</option>
+            <option value="en cours" <?= ($status_filter === 'en cours') ? 'selected' : '' ?>>En cours</option>
+            <option value="traité" <?= ($status_filter === 'traité') ? 'selected' : '' ?>>Traité</option>
           </select>
-        </div>
+        </form>
       </div>
+
 
       <div class="reports-grid">
         <!-- Report Card 1 -->
