@@ -139,7 +139,6 @@ body {
 .filter-bar {
   display: flex;
   align-items: center;
-  gap: 10px;
   margin-bottom: 30px;
   margin-left: 6%;
   border: 1px solid #16a34a;
@@ -150,10 +149,11 @@ body {
 }
 
 .filter-bar input {
-  width: 67%;
-  height: 5vh;
+  width: 70%;
+  height: 7vh;
   background: transparent;
   outline: none;
+  border-radius: 8px 0px 0px 8px;
   border: none;
   padding: 10px 15px;
   color: #ffffff;
@@ -166,4 +166,10 @@ body {
   border-radius: 0px 8px 8px 0px;
   border: none;
   cursor: pointer;
+}
+
+.campaign-btn.done {
+  background-color: #ad2727;
+  cursor: default;
+  opacity: 0.7;
 }

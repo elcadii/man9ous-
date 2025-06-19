@@ -48,7 +48,16 @@ include("scriptPHP/script_allActivite.php");
               <h4>Lieu : <?= htmlspecialchars($activity['activity_location_']) ?></h4>
               <p><?= htmlspecialchars($activity['description']) ?></p>
 
-              <button class="campaign-btn">Participer</button>
+              <form method="POST">
+                <input type="hidden" name="activite_id" value="<?= htmlspecialchars($activity['activite_id']) ?>">
+
+                <?php if (in_array($activity['activite_id'], $participatedActivities)): ?>
+                  <button type="button" class="campaign-btn done" disabled>Déjà participé</button>
+                <?php else: ?>
+                  <button type="submit" name="participate" class="campaign-btn">Participer</button>
+                <?php endif; ?>
+              </form>
+
             </div>
           </div>
         <?php endforeach; ?>

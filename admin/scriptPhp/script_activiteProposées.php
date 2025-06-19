@@ -3,7 +3,8 @@ include("../confige/DbConnect.php");
 
 
 
-// Vérifier si c’est un admin connecté);
+// Vérifier si c’est un admin connecté
+
 if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
     header("Location: ../login.php");
     exit;
@@ -42,8 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
                 ':status' => $action,
-                ':admin_id' => $admin_id,
-                ':id' => $activity_id
+                ':admin_id' => $admin_id ,
+                ':id' => $activity_id 
+                
             ]);
 
             header("Location: " . $_SERVER['PHP_SELF']);

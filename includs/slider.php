@@ -1,3 +1,8 @@
+<?php
+$currentPage = basename($_SERVER['PHP_SELF']);
+$filter = $_GET['filter'] ?? '';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,21 +15,18 @@
 
 <body>
   <aside class="sidebar">
-    <a href="../admin/ProblemSignaler.php" class="sidebar-item">Gestion des plaintes</a>
-    <a href="../admin/activiteProposées.php" class="sidebar-item active">Campagnes proposées</a>
-    <a href="../admin/ajouteUnNouvell.php" class="sidebar-item">Ajoute nouveau actualités</a>
-    <a href="../admin/listeDeL'étulisateure.php?filter=users" class="sidebar-item" <?= ($filter === 'users')  ?>>Voir les utilisateurs</a>
-    <a href="../admin/listeDeL'étulisateure.php?filter=admins" <?= ($filter === 'admins')  ?> class="sidebar-item">Voir les admins</a>
+    <a href="ProblemSignaler.php" class="sidebar-item <?= ($currentPage === 'ProblemSignaler.php') ? 'active' : '' ?>">Gestion des plaintes</a>
+
+    <a href="activiteProposées.php" class="sidebar-item <?= ($currentPage === 'activiteProposées.php') ? 'active' : '' ?>">Campagnes proposées</a>
+
+    <a href="ajouteUnNouvell.php" class="sidebar-item <?= ($currentPage === 'ajouteUnNouvell.php') ? 'active' : '' ?>">Ajoute nouveau actualités</a>
+
+    <a href="listeDeL'étulisateure.php?filter=users" class="sidebar-item <?= ($currentPage === "listeDeL'étulisateure.php" && $filter === 'users') ? 'active' : '' ?>">Voir les utilisateurs</a>
+
+    <a href="listeDeL'étulisateure.php?filter=admins" class="sidebar-item <?= ($currentPage === "listeDeL'étulisateure.php" && $filter === 'admins') ? 'active' : '' ?>">Voir les admins</a>
   </aside>
-  <script>
-    const items = document.querySelectorAll('.sidebar-item');
-    items.forEach(item => {
-      item.addEventListener('click', () => {
-        items.forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
-      });
-    });
-  </script>
+
+  
 
 </body>
 

@@ -4,7 +4,10 @@ include("../confige/DbConnect.php");
 
 // Vérifier si c’est un admin connecté);
 if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../login.php");
+    echo "<div style='padding:20px; background:#ffe0e0; color:#a00; border:1px solid #a00;'>
+            <h2>Accès interdit</h2>
+            <p>Cette page est réservée aux administrateurs.</p>
+          </div>";
     exit;
 }
 
@@ -68,11 +71,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['login'] = true;
             $_SESSION['admin_id'] = $admin['admin_id'];
             $_SESSION['name'] = $admin['first_name'];
-            header("Location: dashboard.php"); 
+            header("Location: dashboard.php");
             exit;
         } else {
             $errors['global'] = "Une erreur s’est produite lors de la connexion.";
         }
     }
 }
-?>

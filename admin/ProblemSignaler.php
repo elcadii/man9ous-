@@ -1,5 +1,6 @@
 <?php
 include("../includs/header.php");
+include("scriptphp/script_listeDeL'étulisateure.php");
 ?>
 
 <!DOCTYPE html>
