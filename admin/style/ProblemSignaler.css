@@ -143,7 +143,6 @@ body {
 .table td select {
   background: transparent;
   padding: 8px 15px;
-  width: 70%;
   border: 1px solid #54d12b;
   border-radius: 10px;
   color: #ffff;
@@ -196,4 +195,24 @@ body {
 
 .date-text {
   color: #999;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border: 1px solid #a2ccae;
+  color: #155724;
+  padding: 10px 16px;
+  margin: 10px 0;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  padding: 10px 16px;
+  margin: 10px 0;
+  border-radius: 6px;
+  font-weight: 500;
 }

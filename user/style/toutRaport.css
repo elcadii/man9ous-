@@ -147,3 +147,19 @@ body {
   background-color: #2e402b;
   color: #ffffff;
 }
+
+.filter-bar select {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #54d12b;
+  font-size: 14px;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.filter-bar select option {
+  background-color: #2e402b;
+  color: #ffffff;
+}
