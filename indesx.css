@@ -308,7 +308,7 @@ header .connection button:hover {
 
 /* ===== REPORTS SECTION ===== */
 .reports {
-  padding: 6rem 0;
+  padding: 2rem 0;
   background: #0f1a0f;
 }
 
@@ -566,4 +566,40 @@ header .connection button:hover {
   border: none;
   outline: none;
   border-radius: 10px;
+}
+
+.voir_tout {
+  background-color: #212d1e;
+  padding: 10px;
+  border-radius: 5px;
+  border: #4fd12b;
+  display: flex;
+  text-align: center;
+  width: 10%;
+  margin: auto;
+  margin-top: 36px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.status-pending {
+  background-color: #ffc10773; 
+  color: #ffc107;
+  padding: 5px 15px;
+  border-radius: 4px;
+}
+
+.status-progress {
+  background-color: #17a3b864; 
+  color: #17a3b8;
+  padding: 5px 15px;
+  border-radius: 4px;
+}
+
+.status-resolved {
+  background-color: #28a7465f; 
+  color: #28a746;
+  padding: 5px 15px;
+  border-radius: 4px;
 }

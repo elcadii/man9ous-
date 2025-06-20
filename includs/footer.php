@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../includs/style/footer.css">
+    <link rel="stylesheet" href="/man9ous/man9ous-/includs/style/footer.css">
   </head>
   <body>
     <!-- Footer -->

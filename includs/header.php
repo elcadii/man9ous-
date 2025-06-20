@@ -7,13 +7,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link rel="stylesheet" href="../includs/style/header.css" />
+  <link rel="stylesheet" href="/man9ous/man9ous-/includs/style/header.css" />
 </head>
 
 <body>
   <header>
     <div class="log">
-      <img src="../img/Man9ous_w.png" alt="">
+      <img src="/man9ous/man9ous-/img/Man9ous_w.png" alt="">
     </div>
 
     <nav>
@@ -24,22 +24,23 @@
       <a href="#">Campagnes</a>
     </nav>
 
-    <?php if (!empty($_SESSION['login']) && !empty($_SESSION['name'])): ?>
-      <!-- User is logged in -->
-      <div class="auth-buttons">
-        <button class="login-btn">
+    <div class="auth-buttons">
+      <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+        <!--  -->
+        <a class="signup-btn" href="/admin/dashboard.php">Admin Panel</a>
+
+      <?php elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'user'): ?>
+        <a class="login-btn">
           <i class="fa-solid fa-user" style="color: #ffffff;"></i>
           <?= htmlspecialchars($_SESSION['name']) ?>
-        </button>
-        <button class="signup-btn">signaler un probleme</button>
-      </div>
-    <?php else: ?>
-      <!-- User not logged in -->
-      <div class="connection">
-        <button id="loginBtn">Se connecter</button>
-        <button id="sig-n_upBtn">inscrire</button>
-      </div>
-    <?php endif; ?>
+        </a>
+        <a class="signup-btn" href="/user/profile.php">signaler un probleme</a>
+      <?php else: ?>
+        <a class="login-btn" href="/login.php">signaler un probleme</a>
+        <a class="signup-btn" href="/register.php">Créer un compte</a>
+      <?php endif; ?>
+    </div>
+
   </header>
 </body>
 
