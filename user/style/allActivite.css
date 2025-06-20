@@ -29,6 +29,8 @@ body {
   color: #22c55e;
 }
 .campaigns-grid {
+  width: 75%;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
