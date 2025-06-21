@@ -70,7 +70,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
   include("includs/herosection.php");
   ?>
   <!-- Mission Section -->
-  <section class="mission">
+  <section class="mission" id="mission">
     <h1 class="section_titel"><span class="span">Notre </span> mission</h1>
     <div class="container">
       <div class="mission-content">
@@ -179,7 +179,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </section>
 
   <!-- Latest Reports Section -->
-  <section class="reports">
+  <section class="reports" id="reports">
     <div class="container">
       <h2 class="section-title">
         Derniers <span class="highlight">rapports</span>
@@ -253,7 +253,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </section>
 
   <!-- News Section -->
-  <section class="news">
+  <section class="news" id="news">
     <div class="container">
       <h2 class="section-title"><span class="highlight">Actualités</span></h2>
 
@@ -279,7 +279,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </section>
 
   <!-- Campaigns Section -->
-  <section class="campaigns">
+  <section class="campaigns" id="campaigns">
     <div class="container">
       <h2 class="section-title"><span class="highlight">Campagnes</span></h2>
 

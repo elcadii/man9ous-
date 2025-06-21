@@ -17,11 +17,11 @@
     </div>
 
     <nav>
-      <a href="#">Accueil</a>
-      <a href="#">À propos</a>
-      <a href="#">rapports</a>
-      <a href="#">Nouvelles</a>
-      <a href="#">Campagnes</a>
+      <a href="/man9ous/man9ous-/index.php#Accueil">Accueil</a>
+      <a href="/man9ous/man9ous-/index.php#mission">À propos</a>
+      <a href="/man9ous/man9ous-/index.php#reports">rapports</a>
+      <a href="/man9ous/man9ous-/index.php#news">Nouvelles</a>
+      <a href="/man9ous/man9ous-/index.php#campaigns">Campagnes</a>
     </nav>
 
     <div class="auth-buttons">

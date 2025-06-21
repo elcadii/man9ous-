@@ -348,12 +348,17 @@ header .connection button:hover {
 }
 
 .news-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
 }
 
 .news-card {
+  width: 30%;
   background: rgba(15, 26, 15, 0.8);
   border: 1px solid rgba(34, 197, 94, 0.1);
   border-radius: 16px;
@@ -413,12 +418,16 @@ header .connection button:hover {
 }
 
 .campaigns-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .campaign-card {
+  width: 30%;
   background: rgba(10, 15, 10, 0.8);
   border: 1px solid rgba(34, 197, 94, 0.1);
   border-radius: 16px;

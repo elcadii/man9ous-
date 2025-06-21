@@ -19,7 +19,7 @@
 
 <body>
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="Accueil">
         <div class="hero-content">
             <h1 class="hero-title">
                 Signalez les problèmes,<br />
