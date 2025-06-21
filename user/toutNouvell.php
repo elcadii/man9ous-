@@ -1,11 +1,17 @@
 <?php
-session_start();
 include("../confige/DbConnect.php");
 
-$sql = "SELECT * FROM news";
-$stmt = $pdo->query($sql);
-$newsList = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
+$sql = "SELECT n.*, a.first_name, a.last_name
+        FROM news n
+        JOIN admin a ON n.admin_id = a.admin_id
+        ORDER BY n.news_id DESC
+        LIMIT 3";
+
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$newsList = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +40,7 @@ $newsList = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <img src="../uploads/news_photos/<?= htmlspecialchars($news['news_img']) ?>" alt="Actualité" class="news-image" />
             <div class="news-content">
               <h4>
-                Posted by <?= htmlspecialchars($_SESSION['name'] ?? 'City Council') ?>
+                Posted by <?= htmlspecialchars($news['first_name'] . ' ' . $news['last_name']) ?>
               </h4>
               <h3><?= htmlspecialchars($news['news_title_']) ?></h3>
               <p><?= htmlspecialchars($news['news_description']) ?></p>

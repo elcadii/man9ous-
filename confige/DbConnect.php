@@ -14,7 +14,7 @@ try {
     
     $protected = true; 
     if ($protected && (!isset($_SESSION['login']) || $_SESSION['login'] !== true)) {
-        header("Location: /man9ous/man9ous-/user/login.php"); 
+        header("Location: /man9ous/man9ous-/user/connection.php"); 
         exit();
     }
 

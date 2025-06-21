@@ -56,6 +56,9 @@ include("scriptPhP/script_conection.php");
                 <button type="submit" name="loginbtn" class="submit-btn" id="submitBtn">
                     Connexion
                 </button>
+                <!-- Link to registration page -->
+                <p style="display: inline; margin:auto; width: fit-content;" class="register-link">
+                    Vous n'avez pas de compte ? <a href="inscription.php">Inscrivez-vous</a>
             </form>
         </div>
     </div>

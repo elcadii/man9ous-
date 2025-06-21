@@ -25,7 +25,7 @@ include("scriptphp/script_toutRaport.php");
         Découvrez les derniers problèmes signalés par la communauté
       </p>
       <form method="GET" class="filter-bar">
-        <label for="status">Filtrer par statut:</label>
+        <label style="margin-left: 8%;" for="status">Filtrer par statut:</label>
         <select name="status" id="status" onchange="this.form.submit()">
           <option value="">Tous</option>
           <option value="non traité" <?= ($status_filter === 'non traité') ? 'selected' : '' ?>>Non traité</option>

@@ -41,8 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["modifierBtn"])) {
                 'newPassword' => $hashedPassword,
                 'email' => $email
             ]);
-            $successMessage = "✅ Mot de passe mis à jour avec succès.";
+            $successMessage = "Mot de passe mis à jour avec succès.";
             $email = ""; // vider champ email après succès
+            header("Location: ../user/profile.php");
         } else {
             $errors["currentPassword"] = "Email ou mot de passe actuel incorrect.";
         }

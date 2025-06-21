@@ -2,9 +2,6 @@
 // session_start();
 include("../confige/DbConnect.php");
 
-if (!isset($_SESSION['user_id'])) {
-    die("Vous devez être connecté.");
-}
 
 $user_id = $_SESSION['user_id'];
 

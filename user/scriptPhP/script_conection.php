@@ -39,14 +39,14 @@ if (isset($_POST['loginbtn'])) {
             $_SESSION['user_id'] = $userRow['user_id'];
             $_SESSION['name'] = $userRow['first_name'];
             $_SESSION['role'] = 'user';
-            header("Location: ../user/");
+            header("Location: ../index.php");
             exit();
         } elseif ($adminRow && password_verify($password, $adminRow['password'])) {
             $_SESSION['login'] = true;
             $_SESSION['admin_id'] = $adminRow['admin_id'];
             $_SESSION['name'] = $adminRow['first_name'];
             $_SESSION['role'] = 'admin';
-            header("Location: ../admin/");
+            header("Location: ../admin/ProblemSignaler.php");
             exit();
         } else {
             $errors['password'] = "Wrong password.";

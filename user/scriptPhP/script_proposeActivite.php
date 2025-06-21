@@ -12,9 +12,7 @@ $errors = [];
 $title = $category = $location = $description = $commune_id = $event_date = "";
 $photo_path = "";
 
-if (!isset($_SESSION['user_id'])) {
-    die("Vous devez être connecté pour proposer une activité.");
-}
+// 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = trim($_POST['title'] ?? '');
@@ -73,6 +71,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($success) {
             $success_message = " L'activité a été ajoutée avec succès !";
+            
+            $title = $category = $location = $description = $commune_id = $event_date = "";
+            $photo_path = "";
+            
+            header("Location: profile.php");
+            exit;
         } else {
             $success_message =  " Erreur lors de l'ajout.";
         }

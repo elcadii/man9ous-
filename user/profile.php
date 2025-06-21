@@ -22,8 +22,8 @@ include("scriptPhP/script_profile.php");
   <div class="user-controls">
     <div class="container">
       <div class="logout">
-        <a href="#"><i class="fas fa-sign-out-alt"></i> Se déconnecter</a>
-        <a href="#">modifie le mot de passe</a>
+        <a href="desconnecter.php"><i class="fas fa-sign-out-alt"></i> Se déconnecter</a>
+        <a href="modiferLeMoteDePass.php">modifie le mot de passe</a>
       </div>
     </div>
   </div>
@@ -42,7 +42,7 @@ include("scriptPhP/script_profile.php");
 
       <div class="features-grid">
         <!-- Feature Card 1 -->
-        <a href="https://www.youtube.com/watch?v=xuLMGiAegg8">
+        <a href="proposeActivite.php">
           <div class="feature-card">
             <div class="feature-icon">
               <i class="fas fa-users"></i>
@@ -53,7 +53,7 @@ include("scriptPhP/script_profile.php");
         </a>
 
         <!-- Feature Card 2 -->
-        <a href="">
+        <a href="mesPropositionDactivite.php">
           <div class="feature-card">
             <div class="feature-icon">
               <i class="fas fa-clipboard-list"></i>
@@ -64,7 +64,7 @@ include("scriptPhP/script_profile.php");
         </a>
 
         <!-- Feature Card 3 -->
-        <a href="">
+        <a href="maiRaport.php">
           <div class="feature-card">
             <div class="feature-icon">
               <i class="fas fa-file-alt"></i>
@@ -75,7 +75,7 @@ include("scriptPhP/script_profile.php");
         </a>
 
         <!-- Feature Card 4 -->
-        <a href="">
+        <a href="signalerProblem.php">
           <div class="feature-card">
             <div class="feature-icon">
               <i class="fas fa-plus-circle"></i>
@@ -117,7 +117,7 @@ include("scriptPhP/script_profile.php");
           <?php endforeach; ?>
 
           <!-- View All News Link -->
-          <a href="#" class="view-all-link">
+          <a href="toutNouvell.php" class="view-all-link">
             <i class="fas fa-arrow-right"></i> Afficher toutes les actualités
           </a>
         </div>
@@ -149,7 +149,7 @@ include("scriptPhP/script_profile.php");
           <?php endforeach; ?>
 
           <!-- View All Reports Link -->
-          <a href="#" class="view-all-link">
+          <a href="toutRaport.php" class="view-all-link">
             <i class="fas fa-arrow-right"></i> Afficher tous les rapports
           </a>
         </div>

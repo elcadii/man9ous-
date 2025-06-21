@@ -96,6 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['somiBTn'])) {
                 $success_message = "Le problème a été signalé avec succès.";
                 $title = $description = $location = "";
                 $commune_id = $category_id = 0;
+                header("Location: profile.php");
             } else {
                 $errors['db'] = "Erreur lors de l'enregistrement du problème.";
             }

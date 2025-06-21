@@ -76,7 +76,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
         Participez activement à l'amélioration de votre communauté en
         signalant les problèmes urbains
       </p>
-      <button class="hero-cta">signaler un probleme</button>
+      <a href="user/signalerProblem.php" class="hero-cta">signaler un probleme</a>
     </div>
     <!-- Hero background image would be added via CSS -->
   </section>
@@ -315,7 +315,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
        
       </div>
-      <a class="voir_tout" href="">voir plus <i class="fa-solid fa-angles-right" style="color: #ffffff;"></i></a>
+      <a class="voir_tout" href="user/allActivite.php">voir plus <i class="fa-solid fa-angles-right" style="color: #ffffff;"></i></a>
       <div class="Propose_activite">
         <i class="fa-solid fa-circle-plus"></i>
         <h2>Vous avez une idée de campagne communautaire ?</h2>
@@ -323,7 +323,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
           Partagez vos idées pour améliorer notre communauté et contribuez à
           bâtir un avenir meilleur pour tous.
         </p>
-        <a href="">Proposition de campagne</a>
+        <a href="user/proposeActivite.php">Proposition de campagne</a>
       </div>
     </div>
 
