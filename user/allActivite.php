@@ -14,7 +14,10 @@ include("scriptPHP/script_allActivite.php");
 <body>
   <?php
   include("../includs/header.php");
+  include("../includs/herosection.php");
   ?>
+
+
 
 
   <!-- Campaigns Section -->

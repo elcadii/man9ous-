@@ -66,21 +66,9 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
   include("includs/header.php");
   ?>
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">
-        Signalez les problèmes,<br />
-        <span class="highlight">améliorez notre ville</span>
-      </h1>
-      <p class="hero-description">
-        Participez activement à l'amélioration de votre communauté en
-        signalant les problèmes urbains
-      </p>
-      <a href="user/signalerProblem.php" class="hero-cta">signaler un probleme</a>
-    </div>
-    <!-- Hero background image would be added via CSS -->
-  </section>
-
+  <?php
+  include("includs/herosection.php");
+  ?>
   <!-- Mission Section -->
   <section class="mission">
     <h1 class="section_titel"><span class="span">Notre </span> mission</h1>

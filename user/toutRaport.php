@@ -15,6 +15,7 @@ include("scriptphp/script_toutRaport.php");
 <body>
   <?php
   include("../includs/header.php");
+  include("../includs/herosection.php");
   ?>
   <section class="reports">
     <div class="container">

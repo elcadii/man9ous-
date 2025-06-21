@@ -30,11 +30,11 @@
         <a class="signup-btn" href="/admin/dashboard.php">Admin Panel</a>
 
       <?php elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'user'): ?>
-        <a class="login-btn">
+        <a href="/man9ous/man9ous-/user/profile.php" class="login-btn">
           <i class="fa-solid fa-user" style="color: #ffffff;"></i>
           <?= htmlspecialchars($_SESSION['name']) ?>
         </a>
-        <a class="signup-btn" href="/user/profile.php">signaler un probleme</a>
+        <a class="signup-btn" href="/man9ous/man9ous-/user/signalerProblem.php">signaler un probleme</a>
       <?php else: ?>
         <a class="login-btn" href="/login.php">signaler un probleme</a>
         <a class="signup-btn" href="/register.php">Créer un compte</a>

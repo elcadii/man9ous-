@@ -27,6 +27,7 @@ $newsList = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
   <?php
   include("../includs/header.php");
+  include("../includs/herosection.php");
   ?>
   <!-- News Section -->
   <section class="news">
