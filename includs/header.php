@@ -26,8 +26,10 @@
 
     <div class="auth-buttons">
       <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+
+        <a href="/man9ous/man9ous-/user/desconnecter.php" class="login-btn">desconnecter</a>
         <!--  -->
-        <a class="signup-btn" href="/admin/dashboard.php">Admin Panel</a>
+        <a  class="signup-btn" href="/man9ous/man9ous-/admin/ProblemSignaler.php">Admin Panel</a>
 
       <?php elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'user'): ?>
         <a href="/man9ous/man9ous-/user/profile.php" class="login-btn">
@@ -36,8 +38,8 @@
         </a>
         <a class="signup-btn" href="/man9ous/man9ous-/user/signalerProblem.php">signaler un probleme</a>
       <?php else: ?>
-        <a class="login-btn" href="/login.php">signaler un probleme</a>
-        <a class="signup-btn" href="/register.php">Créer un compte</a>
+        <a class="login-btn" href="/man9ous/man9ous-/user/signalerProblem.php">signaler un probleme</a>
+        <a class="signup-btn" href="/man9ous/man9ous-/user/inscription.php">Créer un compte</a>
       <?php endif; ?>
     </div>
 

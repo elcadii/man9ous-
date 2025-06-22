@@ -2,6 +2,12 @@
 session_start();
 include("../confige/DbConnect.php");
 
+$protected = true;
+if ($protected && (!isset($_SESSION['login']) || $_SESSION['login'] !== true)) {
+    header("Location: /man9ous/man9ous-/user/conection.php");
+    exit();
+}
+
 // Fetch all communes from the database
 $sql = "SELECT * FROM commune";
 $stmt = $pdo->prepare($sql);
@@ -71,10 +77,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($success) {
             $success_message = " L'activité a été ajoutée avec succès !";
-            
+
             $title = $category = $location = $description = $commune_id = $event_date = "";
             $photo_path = "";
-            
+
             header("Location: profile.php");
             exit;
         } else {

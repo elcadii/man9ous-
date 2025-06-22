@@ -12,11 +12,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     
-    $protected = true; 
-    if ($protected && (!isset($_SESSION['login']) || $_SESSION['login'] !== true)) {
-        header("Location: /man9ous/man9ous-/user/conection.php"); 
-        exit();
-    }
+    
 
 } catch (PDOException $e) {
     echo "Connection error: " . $e->getMessage();

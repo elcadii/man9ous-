@@ -1,6 +1,12 @@
 <?php
 include("../confige/DbConnect.php");
 
+// Vérifier si c’est un admin connecté);
+if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
+    header("Location: /man9ous/man9ous-/user/conection.php");
+    exit;
+}
+
 // 1. Traitement changement de statut
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['saveStatus'])) {
     $problem_id = intval($_POST['problem_id']);

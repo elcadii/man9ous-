@@ -3,6 +3,12 @@ include("../confige/DbConnect.php");
 // var_dump($_SESSION);
 // die();
 
+$protected = true;
+if ($protected && (!isset($_SESSION['login']) || $_SESSION['login'] !== true)) {
+    header("Location: /man9ous/man9ous-/user/conection.php");
+    exit();
+}
+
 $errors = [];
 $title = $description = $photo_path = $location = $problem_date = $status = "";
 $commune_id = $user_id = $category_id = null;
@@ -17,10 +23,7 @@ $stmt = $pdo->prepare("SELECT category_id, category_name_ FROM problem_category"
 $stmt->execute();
 $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Vérification de l'utilisateur connecté
-if (!isset($_SESSION['user_id'])) {
-    die("Vous devez être connecté pour signaler un problème.");
-}
+
 
 // Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['somiBTn'])) {
@@ -87,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['somiBTn'])) {
                     ) VALUES (?, ?, ?, ?)");
 
                     $stmt2->execute([
-                        null, 
+                        null,
                         $problem_id,
                         $status,
                         $operation_date

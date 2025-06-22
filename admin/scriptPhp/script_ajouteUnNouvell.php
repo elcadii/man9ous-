@@ -5,7 +5,7 @@ include("../confige/DbConnect.php");
 
 // Vérifier si c’est un admin connecté);
 if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../../../../user/conection.php");
+    header("Location: /man9ous/man9ous-/user/conection.php");
     exit;
 }
 

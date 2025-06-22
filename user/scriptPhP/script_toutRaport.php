@@ -1,6 +1,11 @@
 <?php
 include("../confige/DbConnect.php");
 
+$protected = true;
+if ($protected && (!isset($_SESSION['login']) || $_SESSION['login'] !== true)) {
+    header("Location: /man9ous/man9ous-/user/conection.php");
+    exit();
+}
 
 $user_id = $_SESSION['user_id'] ?? null;
 // var_dump($_SESSION['user_id']);
@@ -20,7 +25,7 @@ $query = "SELECT p.problem_name, p.description, p.photo_url, p.problem_status, u
           WHERE p.user_id = ?";
 
 
-          
+
 
 if (!empty($status_filter)) {
     $query .= " AND p.problem_status = ?";
@@ -32,4 +37,3 @@ $query .= " ORDER BY p.problem_id DESC";
 $stmt = $pdo->prepare($query);
 $stmt->execute($params);
 $reports = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>

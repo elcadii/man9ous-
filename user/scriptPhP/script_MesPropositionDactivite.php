@@ -2,7 +2,11 @@
 // session_start();
 include("../confige/DbConnect.php");
 
-
+$protected = true;
+if ($protected && (!isset($_SESSION['login']) || $_SESSION['login'] !== true)) {
+    header("Location: /man9ous/man9ous-/user/conection.php");
+    exit();
+}
 $user_id = $_SESSION['user_id'];
 
 $sql = "SELECT * FROM activity WHERE user_id = :user_id ORDER BY event_date DESC";

@@ -1,8 +1,10 @@
 <?php
 include("../confige/DbConnect.php");
 
-if (!isset($_SESSION['user_id'])) {
-    die("Vous devez être connecté pour voir vos rapports.");
+$protected = true;
+if ($protected && (!isset($_SESSION['login']) || $_SESSION['login'] !== true)) {
+    header("Location: /man9ous/man9ous-/user/conection.php");
+    exit();
 }
 
 $user_id = $_SESSION['user_id'];

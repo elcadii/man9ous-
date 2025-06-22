@@ -1,6 +1,11 @@
 <?php
-session_start();
+
 include("../confige/DbConnect.php");
+$protected = true;
+if ($protected && (!isset($_SESSION['login']) || $_SESSION['login'] !== true)) {
+        header("Location: /man9ous/man9ous-/user/conection.php");
+        exit();
+}
 
 // partizipate in activity
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['participate'])) {

@@ -1,12 +1,16 @@
 <?php
 include("../confige/DbConnect.php");
 
-
+// $protected = true;
+// if ($protected && (!isset($_SESSION['login']) || $_SESSION['login'] !== true)) {
+//     header("Location: /man9ous/man9ous-/user/conection.php");
+//     exit();
+// }
 
 // Vérifier si c’est un admin connecté
 
 if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../login.php");
+    header("Location: /man9ous/man9ous-/user/conection.php");
     exit;
 }
 
@@ -43,9 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
                 ':status' => $action,
-                ':admin_id' => $admin_id ,
-                ':id' => $activity_id 
-                
+                ':admin_id' => $admin_id,
+                ':id' => $activity_id
+
             ]);
 
             header("Location: " . $_SERVER['PHP_SELF']);

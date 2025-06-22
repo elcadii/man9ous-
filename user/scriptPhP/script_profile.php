@@ -1,5 +1,12 @@
 <?php
 include("../confige/DbConnect.php");
+
+$protected = true;
+if ($protected && (!isset($_SESSION['login']) || $_SESSION['login'] !== true)) {
+    header("Location: /man9ous/man9ous-/user/conection.php");
+    exit();
+}
+
 $name = $_SESSION['name'] ?? 'Guest';
 
 

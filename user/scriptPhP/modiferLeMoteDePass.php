@@ -1,6 +1,12 @@
 <?php
 include("../confige/DbConnect.php");
 
+$protected = true;
+if ($protected && (!isset($_SESSION['login']) || $_SESSION['login'] !== true)) {
+    header("Location: /man9ous/man9ous-/user/conection.php");
+    exit();
+}
+
 $errors = [];
 $successMessage = "";
 $email = "";
@@ -49,4 +55,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["modifierBtn"])) {
         }
     }
 }
-?>

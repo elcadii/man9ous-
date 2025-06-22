@@ -5,10 +5,7 @@ include("../confige/DbConnect.php");
 
 // Vérifier si c’est un admin connecté);
 if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
-    echo "<div style='padding:20px; background:#ffe0e0; color:#a00; border:1px solid #a00;'>
-            <h2>Accès interdit</h2>
-            <p>Cette page est réservée aux administrateurs.</p>
-          </div>";
+    header("Location: /man9ous/man9ous-/user/conection.php");
     exit;
 }
 
