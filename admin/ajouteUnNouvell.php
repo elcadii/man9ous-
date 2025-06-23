@@ -27,6 +27,13 @@ include("scriptphp/script_listeDeL'étulisateure.php");
 
     <!-- Content -->
     <main class="content">
+      <?php if (isset($_SESSION['success_message'])): ?>
+        <div class="success-message" style="background-color: #d4edda; color: #155724; padding: 10px 15px; border-radius: 6px; margin-bottom: 20px; border: 1px solid #c3e6cb;">
+          <?= htmlspecialchars($_SESSION['success_message']) ?>
+        </div>
+        <?php unset($_SESSION['success_message']); ?>
+      <?php endif; ?>
+
       <!-- Form Header -->
       <div class="form-header">
         <button class="back-button">←</button>
@@ -48,7 +55,7 @@ include("scriptphp/script_listeDeL'étulisateure.php");
 
           <div class="form-group">
             <label for="municipality" class="form-label">Sélectionnez la municipalité</label>
-            <select id="municipality" class="form-control"  name="commune">
+            <select id="municipality" class="form-control" name="commune">
               <option value="">Municipalité</option>
               <?php foreach ($communes as $commune): ?>
                 <option value="<?= htmlspecialchars($commune['commune_id']) ?>">

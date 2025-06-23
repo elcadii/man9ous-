@@ -3,7 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$sdn = "mysql:host=localhost;dbname=man9ousdb";
+$sdn = "mysql:host=localhost;dbname=man9ous";
 $user = "root";
 $pass = "";
 

@@ -116,7 +116,7 @@ include("scriptPHP/script_proposeActivite.php");
 
               <div class="form-group">
                 <label for="municipality">Sélectionnez la municipalité</label>
-                <select class="form-input" id="municipality" name="commune">
+                <select class="form-input" id="municipality" name="commune_id">
                   <option value="">Municipalité</option>
                   <?php foreach ($communes as $commune): ?>
                     <option value="<?= htmlspecialchars($commune['commune_id']) ?>">

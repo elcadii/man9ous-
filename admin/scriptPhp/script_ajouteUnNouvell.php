@@ -23,7 +23,7 @@ $description = $_POST['description'] ?? '';
 // Check if the form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submitNews"])) {
     $title = trim($_POST['title']);
-    $municipality = trim($_POST['municipality']);
+    $municipality = trim($_POST['commune']);
     $description = trim($_POST['description']);
     $admin_id = $_SESSION['admin_id'] ?? null;
     // var_dump($admin_id);
@@ -90,8 +90,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submitNews"])) {
             ]);
 
             $_SESSION['success_message'] = "Nouvelle actualité ajoutée avec succès.";
-            header("Location: news_list.php");
-            exit();
+            // delet inputs container
+            $title = '';
+            $municipality = '';
+            $description = '';
+            $_FILES['photos'] = []; 
+
+
+            
+            
         }
     }
 }

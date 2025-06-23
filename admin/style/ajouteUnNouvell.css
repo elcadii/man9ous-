@@ -195,3 +195,13 @@ body {
   font-size: 14px;
   margin-top: 4px;
 }
+
+.success-message {
+  background-color: #e6ffed;
+  color: #218838;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #c3e6cb;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
