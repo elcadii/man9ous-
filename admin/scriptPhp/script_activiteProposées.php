@@ -9,6 +9,10 @@ include("../confige/DbConnect.php");
 
 // Vérifier si c’est un admin connecté
 
+// echo  $_SESSION['commune_id'] ;
+// die();
+
+
 if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
     header("Location: /man9ous/man9ous-/user/conection.php");
     exit;
@@ -58,12 +62,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Récupérer les activités en attente
+// Récupérer les activités en attente pour la même commune que l'admin
 $sql = "SELECT a.*, u.first_name, u.last_name 
         FROM activity a
         JOIN users u ON a.user_id = u.user_id
         WHERE a.activity_status = 'en attente'
+        AND a.commune_id = :commune_id
         ORDER BY a.event_date DESC";
+
 $stmt = $pdo->prepare($sql);
-$stmt->execute();
+$stmt->execute([':commune_id' => $_SESSION['commune_id']]);
 $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -103,8 +103,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["singup"])) {
         $_SESSION['login'] = true;
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['first_name'] = $user['first_name'];
+        $_SESSION['commune_id'] = $user['commune_id'];
 
-        header("Location: connection.php");
+        header("Location: http://localhost/man9ous/man9ous-/user/conection.php");
         exit();
     }
 }

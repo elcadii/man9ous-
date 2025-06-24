@@ -17,18 +17,14 @@ if (!$user_id) {
 
 // Filtrage
 $status_filter = $_GET['status'] ?? '';
-$params = [$user_id];
+$params = [];
 
 $query = "SELECT p.problem_name, p.description, p.photo_url, p.problem_status, u.first_name
           FROM problem p 
-          JOIN users u ON p.user_id = u.user_id
-          WHERE p.user_id = ?";
-
-
-
+          JOIN users u ON p.user_id = u.user_id";
 
 if (!empty($status_filter)) {
-    $query .= " AND p.problem_status = ?";
+    $query .= " WHERE p.problem_status = ?";
     $params[] = $status_filter;
 }
 

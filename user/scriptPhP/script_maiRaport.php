@@ -1,11 +1,15 @@
 <?php
 include("../confige/DbConnect.php");
 
+
 $protected = true;
 if ($protected && (!isset($_SESSION['login']) || $_SESSION['login'] !== true)) {
     header("Location: /man9ous/man9ous-/user/conection.php");
     exit();
 }
+
+// echo $_SESSION['commune_id'];
+// die();
 
 $user_id = $_SESSION['user_id'];
 $status_filter = $_GET['status'] ?? '';
@@ -28,4 +32,3 @@ $sql .= " ORDER BY p.problem_id DESC";
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $reports = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>

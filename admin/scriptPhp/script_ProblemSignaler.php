@@ -25,21 +25,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['saveStatus'])) {
         echo "<div class='alert-success'>Le statut a été mis à jour avec succès dans les deux tables.</div>";
         header("Refresh: 1; url=ProblemSignaler.php");
     } else {
-        echo "<div class='alert-error'>❌ Erreur : admin non connecté ou données manquantes.</div>";
+        echo "<div class='alert-error'> Erreur : admin non connecté ou données manquantes.</div>";
     }
 }
 
 // 2. Filtrage par statut
+// 2. Filtrage par statut avec commune_id
 $status_filter = $_GET['status'] ?? '';
-$params = [];
+$params = [':commune_id' => $_SESSION['commune_id']];
 
 $query = "SELECT p.*, m.status AS management_status
           FROM problem p
-          JOIN management m ON p.problem_id = m.problem_id";
+          JOIN management m ON p.problem_id = m.problem_id
+          WHERE p.commune_id = :commune_id";
 
 if (!empty($status_filter)) {
-    $query .= " WHERE m.status = ?";
-    $params[] = $status_filter;
+    $query .= " AND m.status = :status";
+    $params[':status'] = $status_filter;
 }
 
 $query .= " ORDER BY p.problem_date DESC";
@@ -48,14 +50,21 @@ $stmt->execute($params);
 $reports = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
+
 // statistique================================
 
 $waiting = $resolved = $in_progress = $total = 0;
 
 // Requête pour récupérer les stats
-$sql = "SELECT problem_status, COUNT(*) AS count FROM problem GROUP BY problem_status";
-$stmt = $pdo->query($sql);
+$sql = "SELECT problem_status, COUNT(*) AS count 
+        FROM problem 
+        WHERE commune_id = :commune_id 
+        GROUP BY problem_status";
+
+$stmt = $pdo->prepare($sql);
+$stmt->execute([':commune_id' => $_SESSION['commune_id']]);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 // Remplir les compteurs
 foreach ($results as $row) {

@@ -276,7 +276,7 @@ if ($user_id) {
         </div> -->
       </div>
     </div>
-    <a class="voir_tout" href="user/toutRapport.php">voir plus <i class="fa-solid fa-angles-right" style="color: #ffffff;"></i></a>
+    <a class="voir_tout" href="/man9ous/man9ous-/user/toutRaport.php">voir plus <i class="fa-solid fa-angles-right" style="color: #ffffff;"></i></a>
   </section>
 
   <!-- News Section -->
