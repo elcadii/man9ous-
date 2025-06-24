@@ -38,7 +38,7 @@
         </a>
         <a class="signup-btn" href="/man9ous/man9ous-/user/signalerProblem.php">signaler un probleme</a>
       <?php else: ?>
-        <a class="login-btn" href="/man9ous/man9ous-/user/signalerProblem.php">signaler un probleme</a>git
+        <a class="login-btn" href="/man9ous/man9ous-/user/signalerProblem.php">signaler un probleme</a>
         <a class="signup-btn" href="/man9ous/man9ous-/user/inscription.php">Créer un compte</a>
       <?php endif; ?>
     </div>

@@ -561,3 +561,9 @@ header .connection button:hover {
   padding: 5px 15px;
   border-radius: 4px;
 }
+
+.campaign-btn.done {
+  background-color: #ad2727;
+  cursor: default;
+  opacity: 0.7;
+}

@@ -29,6 +29,7 @@ $newsItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $sql = "SELECT a.*, u.first_name, u.last_name
         FROM activity a
         JOIN users u ON a.user_id = u.user_id
+        WHERE a.activity_status = 'accepter'
         ORDER BY a.activite_id DESC
         LIMIT 3";
 
@@ -36,6 +37,32 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
+// is it participated in activities
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['participate'])) {
+  $user_id = $_SESSION['user_id'] ?? null;
+  $activite_id = $_POST['activite_id'] ?? null;
+
+  if ($user_id && $activite_id) {
+    $check = $pdo->prepare("SELECT * FROM participates WHERE user_id = ? AND activite_id = ?");
+    $check->execute([$user_id, $activite_id]);
+
+    if (!$check->fetch()) {
+      $stmt = $pdo->prepare("INSERT INTO participates (user_id, activite_id) VALUES (?, ?)");
+      $stmt->execute([$user_id, $activite_id]);
+      header("Location: allActivite.php");
+      exit();
+    }
+  }
+}
+
+$user_id = $_SESSION['user_id'] ?? null;
+$participatedActivities = [];
+if ($user_id) {
+  $stmtParticipated = $pdo->prepare("SELECT activite_id FROM participates WHERE user_id = ?");
+  $stmtParticipated->execute([$user_id]);
+  $participatedActivities = $stmtParticipated->fetchAll(PDO::FETCH_COLUMN);
+}
 
 ?>
 
@@ -296,12 +323,22 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
               <h3><?= htmlspecialchars($activity['title']) ?></h3>
               <h4>Lieu : <?= htmlspecialchars($activity['activity_location_']) ?></h4>
               <p><?= htmlspecialchars($activity['description']) ?></p>
-              <button class="campaign-btn">Participer</button>
+              <form method="POST">
+                <input type="hidden" name="activite_id" value="<?= htmlspecialchars($activity['activite_id']) ?>">
+
+                <?php if (!isset($_SESSION['user_id'])): ?>
+                  <a href="/man9ous/man9ous-/user/conection.php" class="campaign-btn">Connectez-vous pour participer</a>
+                <?php elseif (in_array($activity['activite_id'], $participatedActivities)): ?>
+                  <button type="button" class="campaign-btn done" disabled>Déjà participé</button>
+                <?php else: ?>
+                  <button type="submit" name="participate" class="campaign-btn">Participer</button>
+                <?php endif; ?>
+              </form>
             </div>
           </div>
         <?php endforeach; ?>
 
-       
+
       </div>
       <a class="voir_tout" href="user/allActivite.php">voir plus <i class="fa-solid fa-angles-right" style="color: #ffffff;"></i></a>
       <div class="Propose_activite">
@@ -322,7 +359,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
   include("includs/footer.php");
   ?>
 
- 
+
 
   <script>
     document.querySelectorAll('.report-status').forEach(function(el) {

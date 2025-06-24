@@ -13,7 +13,7 @@ include("scriptPhP/modiferLeMoteDePass.php");
 <body>
     <?php include("../includs/header.php"); ?>
 
-    <a class="gotohome" href="go to profile"><i class="fa-solid fa-angles-left" style="color: #ffffff;"></i> go to profile</a>
+    <a class="gotohome" href="/man9ous/man9ous-/user/profile.php"><i class="fa-solid fa-angles-left" style="color: #ffffff;"></i> go to profile</a>
 
     <main class="main-content">
         <div class="password-form-container">
