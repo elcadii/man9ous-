@@ -326,7 +326,7 @@ if ($user_id) {
               <form method="POST">
                 <input type="hidden" name="activite_id" value="<?= htmlspecialchars($activity['activite_id']) ?>">
 
-                <?php if (!isset($_SESSION['user_id'])): ?>
+                <?php if (!isset($_SESSION['login'])): ?>
                   <a href="/man9ous/man9ous-/user/conection.php" class="campaign-btn">Connectez-vous pour participer</a>
                 <?php elseif (in_array($activity['activite_id'], $participatedActivities)): ?>
                   <button type="button" class="campaign-btn done" disabled>Déjà participé</button>

@@ -7,13 +7,13 @@ if ($protected && (!isset($_SESSION['login']) || $_SESSION['login'] !== true)) {
     exit();
 }
 
-$user_id = $_SESSION['user_id'] ?? null;
-// var_dump($_SESSION['user_id']);
-//           die();
+// $user_id = $_SESSION['user_id'] ?? null;
+// // var_dump($_SESSION['user_id']);
+// //           die();
 
-if (!$user_id) {
-    die("Utilisateur non connecté.");
-}
+// if (!$user_id) {
+//     die("Utilisateur non connecté.");
+// }
 
 // Filtrage
 $status_filter = $_GET['status'] ?? '';
