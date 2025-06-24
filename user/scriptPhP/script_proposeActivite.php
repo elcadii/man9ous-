@@ -81,8 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $title = $category = $location = $description = $commune_id = $event_date = "";
             $photo_path = "";
 
-            header("Location: profile.php");
-            exit;
+            header("Refresh: 1; url=/man9ous/man9ous-/user/proposeActivite.php");
         } else {
             $success_message =  " Erreur lors de l'ajout.";
         }
