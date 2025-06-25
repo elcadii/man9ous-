@@ -1,7 +1,11 @@
 <?php
 include("../confige/DbConnect.php");
 
-
+$protected = true;
+if ($protected && (!isset($_SESSION['login']) || $_SESSION['login'] !== true)) {
+        header("Location: /man9ous/man9ous-/user/conection.php");
+        exit();
+}
 
 $sql = "SELECT n.*, a.first_name, a.last_name
         FROM news n
