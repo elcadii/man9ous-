@@ -41,10 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submitNews"])) {
         $errors['description'] = "La description est obligatoire.";
     }
 
-    if (!isset($_FILES['photos']) || empty($_FILES['photos']['name'][0])) {
+    if (!isset($_FILES['photos']) || empty($_FILES['photos']['name'])) {
         $errors['photos'] = "Veuillez ajouter au moins une photo.";
     } else {
-        $allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+        $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/heic', 'image/heif'];
         foreach ($_FILES['photos']['tmp_name'] as $key => $tmp_name) {
             $type = $_FILES['photos']['type'][$key];
             if (!in_array($type, $allowedTypes)) {
@@ -81,12 +81,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submitNews"])) {
 
             $stmt = $pdo->prepare("INSERT INTO news (news_title_, news_img, news_description, admin_id, municipality_id)
                                    VALUES (:title, :img, :description, :admin_id, :municipality)");
+                                
             $stmt->execute([
                 ':title' => $title,
                 ':img' => $mainImage,
                 ':description' => $description,
                 ':admin_id' => $admin_id,
                 ':municipality' => $municipality
+            
             ]);
 
             $_SESSION['success_message'] = "Nouvelle actualité ajoutée avec succès.";
